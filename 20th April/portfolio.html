@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Huzaifa Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0f172a;
+  color:white;
+}
+
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+header h1{font-size:3rem;}
+header p{color:#94a3b8;}
+header a{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#6366f1;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
+}
+
+section{
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+h2{text-align:center;margin-bottom:30px;}
+
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+.skill{
+  background:#1e293b;
+  padding:10px 15px;
+  border-radius:5px;
+}
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.project-card{
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  transition:0.3s;
+  border-left:4px solid #6366f1;
+}
+.project-card:hover{
+  transform:translateY(-5px) scale(1.02);
+}
+
+.contact{text-align:center;}
+footer{
+  text-align:center;
+  padding:20px;
+  color:#94a3b8;
+}
+
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.6s;
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Huzaifa</h1>
+  <p>Frontend Developer | UI/UX Enthusiast</p>
+  <a href="#projects">Explore My Work</a>
+</header>
+
+<section class="fade">
+  <h2>About Me</h2>
+  <p style="text-align:center;color:#cbd5f5;">
+    I design and build clean, responsive, and user-focused digital experiences.
+    From low-level logic to polished interfaces — I translate ideas into working systems.
+  </p>
+</section>
+
+<section class="fade">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Django</div>
+    <div class="skill">SQL</div>
+    <div class="skill">WordPress</div>
+    <div class="skill">UI/UX</div>
+    <div class="skill">OOP</div>
+    <div class="skill">Data Structures</div>
+  </div>
+</section>
+
+<section id="projects" class="fade">
+  <h2>Projects</h2>
+
+  <div class="projects">
+
+    <div class="project-card">
+      <h3>Candy Crush Game</h3>
+      <p>PF project implementing game logic, scoring system, and grid-based mechanics.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Contact Book Management System</h3>
+      <p>OOP-based system with CRUD operations and structured data handling.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Mini Instagram (Console App)</h3>
+      <p>Data Management project simulating posts, users, and interactions.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Pharmacy Management System</h3>
+      <p>System design focusing on modular architecture and scalability.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Django Email Verification System</h3>
+      <p>Authentication system with OTP verification before database storage.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>UI/UX Competition Designs</h3>
+      <p>Modern interface designs created for FAST Softech & UMT Techverse competitions.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>WordPress Websites</h3>
+      <p>Multiple responsive websites designed and deployed using WordPress.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Ping Pong Game (Assembly)</h3>
+      <p>Low-level implementation of game logic using assembly language.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Marks Predictor (DS Project)</h3>
+      <p>Data-driven prediction model using structured dataset analysis.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact fade">
+  <h2>Contact</h2>
+  <p>Email: huzaifa.hammad@email.com</p>
+  <p>Phone: +92 3023386860</p>
+</section>
+
+<footer>
+  <p>© 2026 Huzaifa | Built with clarity and intent</p>
+</footer>
+
+<script>
+const elements = document.querySelectorAll('.fade');
+
+function reveal(){
+  const trigger = window.innerHeight * 0.85;
+  elements.forEach(el=>{
+    const top = el.getBoundingClientRect().top;
+    if(top < trigger){
+      el.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', reveal);
+</script>
+
+</body>
+</html>
